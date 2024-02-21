@@ -17,4 +17,28 @@ To get this stack up and running, you will need Docker and Docker Compose instal
 
 ```bash
 docker-compose up
- 
+
+Logs interactions with the shopping cart,order_service_logs, payment_service_logs including additions, removals, and modifications.
+
+```sql
+CREATE TABLE shopping_cart_logs (
+    id SERIAL PRIMARY KEY,
+    log_level VARCHAR(10),
+    log_message TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+); 
+
+CREATE TABLE order_service_logs (
+    id SERIAL PRIMARY KEY,
+    log_level VARCHAR(10),
+    log_message TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE payment_service_logs (
+    id SERIAL PRIMARY KEY,
+    log_level VARCHAR(10),
+    log_message TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
